@@ -27,11 +27,11 @@ One paragraph (3-5 sentences) answering: what is this concept, why does it exist
 
 ## How it works
 
-Walk through the mechanism. Reference sources by path + line range:
+Walk through the mechanism in PROSE, with inline `<<source:>>` directives so the host LLM can pull exact line ranges only when verbatim code is needed. **Prefer prose-with-citation over fenced code blocks** — pasting code into the concept defeats the whole point of the directive protocol.
 
-- `src/auth/login.py:42-67` — validates credentials using bcrypt, constant-time compare
-- `src/auth/jwt.py:18-30` — issues token with 1h TTL, includes user_id and role claims
-- `src/middleware/auth.py:55-90` — validates token on each request, attaches user to `request.state.user`
+- Credentials are validated using bcrypt with a constant-time compare at `<<source: src/auth/login.py:42-67>>`.
+- Tokens are issued with a 1h TTL and carry `user_id`/`role` claims; the issuer lives at `<<source: src/auth/jwt.py:18-30>>`.
+- Every request runs through the middleware at `<<source: src/middleware/auth.py:55-90>>`, which validates the token and attaches the user to `request.state.user`.
 
 Use diagrams sparingly — a small mermaid sequence diagram earns its tokens for non-trivial flows, but skip for simple ones.
 

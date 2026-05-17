@@ -1,3 +1,11 @@
+<!--
+  This is the template for `summarize` jobs (prose/markdown/uncategorized
+  files where signature extraction does not apply).
+
+  For CODE files where the script emits `summarize_signature` jobs, use
+  `signature_summary_template.md` instead — that template skips the symbol
+  list (the skeleton has it) and only asks for Purpose + Notable decisions.
+-->
 ---
 source: <relative/path/to/source>
 sha256: <full sha256>

@@ -1,0 +1,188 @@
+"""Tests for emit-adapters: file emission, idempotency, drift, sentinel merge,
+diff-only, dry-run, CONVENTION_VERSION stamping, adapter-check."""
+from __future__ import annotations
+
+import json
+import shutil
+import subprocess
+import sys
+import unittest
+from pathlib import Path
+
+from evals._support import (
+    FIXTURES, SCRIPT_PATH, compile_mod, make_temp_repo, run_compile,
+)
+
+
+def _emit(tmp: Path, *extra_args: str, check: bool = True) -> subprocess.CompletedProcess:
+    return run_compile(
+        "emit-adapters", "--root", str(tmp), "--tools", "all", "--yes",
+        *extra_args, check=check,
+    )
+
+
+class TestEmitWritesAllFour(unittest.TestCase):
+    def setUp(self):
+        self.tmp = make_temp_repo(seed=FIXTURES / "minimal_repo")
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def test_emit_writes_all_four_files(self):
+        _emit(self.tmp)
+        self.assertTrue((self.tmp / "CLAUDE.md").exists())
+        self.assertTrue((self.tmp / "AGENTS.md").exists())
+        self.assertTrue((self.tmp / ".github" / "copilot-instructions.md").exists())
+        self.assertTrue((self.tmp / ".cursor" / "rules" / "repokb.mdc").exists())
+
+    def test_critical_banner_present_for_non_claude(self):
+        _emit(self.tmp)
+        for path, expected_banner in [
+            (self.tmp / "AGENTS.md", True),
+            (self.tmp / ".github" / "copilot-instructions.md", True),
+            (self.tmp / ".cursor" / "rules" / "repokb.mdc", True),
+            (self.tmp / "CLAUDE.md", False),
+        ]:
+            text = path.read_text(encoding="utf-8")
+            if expected_banner:
+                self.assertIn("CRITICAL", text, f"banner missing in {path.name}")
+            else:
+                self.assertNotIn("CRITICAL", text, f"banner unexpectedly in {path.name}")
+
+    def test_copilot_under_3k_tokens(self):
+        _emit(self.tmp)
+        text = (self.tmp / ".github" / "copilot-instructions.md").read_text(encoding="utf-8")
+        tokens = compile_mod.estimate_tokens(text)
+        self.assertLessEqual(tokens, 3000,
+                             f"Copilot adapter exceeded 3K-token budget: {tokens}")
+
+    def test_cursor_has_mdc_frontmatter(self):
+        _emit(self.tmp)
+        text = (self.tmp / ".cursor" / "rules" / "repokb.mdc").read_text(encoding="utf-8")
+        self.assertTrue(text.startswith("---"))
+        self.assertIn("alwaysApply: true", text)
+        self.assertIn("globs:", text)
+
+    def test_claude_preserves_yaml_frontmatter(self):
+        _emit(self.tmp)
+        text = (self.tmp / "CLAUDE.md").read_text(encoding="utf-8")
+        self.assertIn("name: repokb", text)
+        self.assertIn("description:", text)
+
+
+class TestEmitIdempotency(unittest.TestCase):
+    def setUp(self):
+        self.tmp = make_temp_repo(seed=FIXTURES / "minimal_repo")
+        _emit(self.tmp)
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def test_re_emit_writes_zero_files(self):
+        result = _emit(self.tmp)
+        self.assertIn("Wrote 0 file(s)", result.stdout)
+
+    def test_diff_only_exits_zero_when_clean(self):
+        r = run_compile("emit-adapters", "--root", str(self.tmp),
+                        "--tools", "all", "--diff-only", check=False)
+        self.assertEqual(r.returncode, 0)
+
+    def test_diff_only_exits_one_when_drifted(self):
+        # Cursor uses replace mode, so any tamper is drift.
+        cursor = self.tmp / ".cursor" / "rules" / "repokb.mdc"
+        cursor.write_text(cursor.read_text(encoding="utf-8") + "\n\nhand-edited",
+                          encoding="utf-8")
+        r = run_compile("emit-adapters", "--root", str(self.tmp),
+                        "--tools", "all", "--diff-only", check=False)
+        self.assertEqual(r.returncode, 1)
+
+
+class TestEmitDryRun(unittest.TestCase):
+    def setUp(self):
+        self.tmp = make_temp_repo(seed=FIXTURES / "minimal_repo")
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def test_dry_run_writes_nothing(self):
+        result = run_compile("emit-adapters", "--root", str(self.tmp),
+                             "--tools", "all", "--yes", "--dry-run")
+        self.assertFalse((self.tmp / "AGENTS.md").exists())
+        self.assertIn("no files written", result.stdout.lower())
+
+
+class TestStampPresent(unittest.TestCase):
+    def setUp(self):
+        self.tmp = make_temp_repo(seed=FIXTURES / "minimal_repo")
+        _emit(self.tmp)
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def test_trailing_stamp_present_in_all_four(self):
+        for path in [self.tmp / "CLAUDE.md",
+                     self.tmp / "AGENTS.md",
+                     self.tmp / ".github" / "copilot-instructions.md",
+                     self.tmp / ".cursor" / "rules" / "repokb.mdc"]:
+            text = path.read_text(encoding="utf-8")
+            self.assertIn("generated by repokb emit-adapters", text,
+                          f"stamp missing in {path}")
+            self.assertIn("CONVENTION_VERSION=", text)
+
+    def test_adapter_check_passes_when_versions_match(self):
+        r = run_compile("adapter-check", "--root", str(self.tmp))
+        self.assertEqual(r.returncode, 0)
+        self.assertIn("[ok]", r.stdout)
+
+
+class TestSentinelMerge(unittest.TestCase):
+    def setUp(self):
+        self.tmp = make_temp_repo(seed=FIXTURES / "minimal_repo")
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def test_sentinel_preserves_user_content(self):
+        # Pre-populate AGENTS.md with user content
+        agents = self.tmp / "AGENTS.md"
+        agents.write_text(
+            "# User's own notes\n\n"
+            "Some hand-written guidance above.\n\n"
+            "<!-- repokb:start version=\"2\" -->\n"
+            "old repokb content\n"
+            "<!-- repokb:end -->\n\n"
+            "Hand-written guidance below.\n",
+            encoding="utf-8",
+        )
+        _emit(self.tmp)
+        text = agents.read_text(encoding="utf-8")
+        self.assertIn("User's own notes", text)
+        self.assertIn("hand-written guidance above", text)
+        self.assertIn("Hand-written guidance below", text)
+        # And RepoKB's content was updated inside the sentinel
+        self.assertIn("RepoKB", text)
+        self.assertNotIn("old repokb content", text)
+
+
+class TestStructDriftLint(unittest.TestCase):
+    """STRUCT-07: lint detects drift between emitted file and re-render."""
+
+    def setUp(self):
+        self.tmp = make_temp_repo(seed=FIXTURES / "minimal_repo")
+        run_compile("init", "--root", str(self.tmp))
+        _emit(self.tmp)
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def test_tampered_adapter_file_triggers_struct_07(self):
+        agents = self.tmp / "AGENTS.md"
+        text = agents.read_text(encoding="utf-8")
+        agents.write_text(text.replace("CRITICAL", "TAMPERED"), encoding="utf-8")
+        r = run_compile("lint", "--root", str(self.tmp), check=False)
+        self.assertIn("STRUCT-07", r.stdout)
+        self.assertIn("codex", r.stdout)
+
+
+if __name__ == "__main__":
+    unittest.main()

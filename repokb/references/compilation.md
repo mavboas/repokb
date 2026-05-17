@@ -4,19 +4,34 @@ This reference is loaded when running `init` or when a query's required concept 
 
 ## The two-phase protocol
 
-The script (`scripts/compile.py`) handles **deterministic** work — walking the filesystem, hashing, file I/O, MANIFEST maintenance. The LLM (you, Claude) handles **non-deterministic** work — summarization and concept synthesis. The split matters: it keeps the script reliable and minimizes the LLM tokens spent on plumbing.
+The script (`scripts/compile.py`) handles **deterministic** work — walking the filesystem, hashing, file I/O, MANIFEST maintenance, AST/regex signature extraction. The host LLM (Claude / Codex / Copilot / Cursor — whichever is running this skill) handles **non-deterministic** work — summary enrichment and concept synthesis. The split matters: it keeps the script reliable and minimizes the LLM tokens spent on plumbing.
 
-The script communicates with you via a **work queue**: a temp file `.repokb/.work_queue.jsonl` where each line is a job. You read the queue, do the work, write outputs to the paths the script tells you, then mark the job done.
+The script communicates with the host LLM via a **work queue**: a temp file `.repokb/.work_queue.jsonl` where each line is a job. The host LLM reads the queue, does the work, writes outputs to the paths the script tells it, then marks the job done.
 
-### Phase 1: Per-source summarization
+### Phase 1: Per-source summarization (two job kinds)
 
-For each new or modified source file, the script emits a job like:
+For each new or modified source file the script emits ONE of two jobs:
+
+**Job kind A — `summarize_signature` (code files with enabled extractors):**
 
 ```json
-{"job": "summarize", "source_path": "src/auth/login.py", "out_path": ".repokb/summaries/src__auth__login.py.md", "sha256": "a3f..."}
+{"job": "summarize_signature", "source_path": "src/auth/login.py",
+ "out_path": ".repokb/summaries/src__auth__login.py.md",
+ "signature_path": ".repokb/signatures/src__auth__login.py.md",
+ "sha256": "a3f...", "sig_sha256": "b9e..."}
 ```
 
-For each job:
+The host LLM reads **only the signature skeleton** (a deterministic, AST-derived map of public symbols + docstrings + `<<source:>>` directives + `<<unclear: reason>>` markers — see `signatures.md`). It enriches with just `Purpose` (1 sentence) + `Notable decisions / gotchas`. It does NOT read the source file unless a symbol carries `<<unclear:>>` — and then only the cited line range.
+
+If the skeleton is fundamentally insufficient for the file, the LLM returns `{"defer_to_source": true, "reason": "..."}` and the script re-queues the file as a legacy `summarize` job.
+
+**Job kind B — `summarize` (prose, markdown, or any file without an enabled extractor):**
+
+```json
+{"job": "summarize", "source_path": "docs/auth.md", "out_path": ".repokb/summaries/docs__auth.md.md", "sha256": "a3f..."}
+```
+
+For each `summarize` job:
 
 1. Read the source file (the **only** time the raw file enters context)
 2. Write a summary to `out_path` following the template below

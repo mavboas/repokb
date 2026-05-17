@@ -31,6 +31,24 @@ A concept page contains `<!-- contradiction: ... -->` markers. Surface them so t
 ### KNOW-03: Stale documentation source
 A source in `docs/` hasn't been modified in N days (default 180) but adjacent code sources have. Suggests docs are drifting. **Soft warning** — user decides.
 
+### STRUCT-07: Adapter drift
+An emitted per-tool instruction file (`CLAUDE.md`, `AGENTS.md`, `.github/copilot-instructions.md`, `.cursor/rules/repokb.mdc`) is out of sync with what the canonical `repokb/SKILL.md` would produce now. Triggered by:
+- Hand-edits to the file (outside the sentinel block for sentinel-mode adapters)
+- Canonical SKILL.md changed after emit
+- Adapter's `CONVENTION_VERSION` advanced
+
+**Fix:** `python repokb/scripts/compile.py emit-adapters --diff-only` to see the drift, then `emit-adapters` to fix.
+
+### STRUCT-08: Orphan or out-of-bounds source directive
+A concept page contains `<<source: path:start-end>>` where either:
+- `path` is not in the concept's `touches_sources` (orphan)
+- the line range exceeds the actual file length
+
+Orphans break the incremental-update guarantee. **Fix:** add the path to `touches_sources` (and re-run `update` so the concept refreshes), or remove the directive.
+
+### STRUCT-09: Code-block-heavy concept
+A concept page has more than 5 fenced code blocks. Suggests the concept is becoming a copy of the source rather than a synthesis. **Fix:** replace code blocks with prose-with-citation via `<<source:>>` directives. See `references/source_directives.md`.
+
 ### PERF-01: MANIFEST size approaching limit
 MANIFEST > 80% of the 3000 token budget. **Fix:** see `manifest_schema.md` size enforcement section.
 
@@ -39,6 +57,9 @@ MANIFEST > 80% of the 3000 token budget. **Fix:** see `manifest_schema.md` size 
 
 ### PERF-03: Concept fanout too wide
 A concept touches > 20 sources. Suggests the topic is too broad and routing precision suffers. **Fix:** split.
+
+### PERF-04: Signature defer rate too high
+`stats.signature_defer_rate > 30%` — the host LLM is frequently asking for full-source summaries instead of using the AST skeleton. This usually means AST extraction isn't paying off for this codebase. **Fix:** set `signature_extraction.<language>: false` for the affected language in `config.yaml`, or tag individual problematic files with `# REPOKB: full-summary`.
 
 ## Reporting format
 

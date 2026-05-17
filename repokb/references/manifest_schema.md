@@ -2,14 +2,17 @@
 
 The MANIFEST is the index. Treat it as the **only thing always in context**. Everything else is loaded on demand. Keep it small, keep it accurate.
 
-## Full schema
+## Full schema (v2)
 
 ```json
 {
-  "version": 1,
+  "version": 2,
   "root": "/absolute/path/to/repo",
   "created_at": "2026-05-01T10:00:00Z",
   "updated_at": "2026-05-16T14:00:00Z",
+  "host_tool": "claude",
+  "adapters_emitted_at": "2026-05-16T14:01:00Z",
+  "canonical_skill_sha256": "abc123...",
   "model_used": "claude-opus-4-7",
   "config": {
     "include_globs": ["**/*"],
@@ -17,24 +20,39 @@ The MANIFEST is the index. Treat it as the **only thing always in context**. Eve
     "ingest_binary_docs": true,
     "max_concept_tokens": 1500,
     "max_summary_tokens": 400,
-    "max_concepts": 80
+    "max_concepts": 80,
+    "signature_extraction": {
+      "python": "ast",
+      "javascript": "regex",
+      "typescript": "regex",
+      "go": "regex",
+      "rust": "regex",
+      "*": false
+    },
+    "audit_directives": false
   },
   "stats": {
     "sources": 142,
     "summaries": 142,
     "concepts": 18,
     "stale_concepts": 0,
-    "total_size_bytes": 2847291
+    "total_size_bytes": 2847291,
+    "signature_defer_count": 3,
+    "signature_defer_rate": 0.03
   },
   "sources": [
     {
       "path": "src/auth/login.py",
       "sha256": "a3f8b2...",
+      "sig_sha256": "b9e7c1...",
+      "signature_source": "ast",
+      "signature_file": "signatures/src__auth__login.py.md",
       "bytes": 4821,
       "mtime": "2026-05-15T09:23:11Z",
       "summary": "summaries/src__auth__login.py.md",
       "tags": ["auth", "session", "jwt"],
-      "type": "python"
+      "type": "py",
+      "language": "python"
     }
   ],
   "concepts": [
@@ -53,6 +71,10 @@ The MANIFEST is the index. Treat it as the **only thing always in context**. Eve
         "src/middleware/jwt.py",
         "docs/auth.md"
       ],
+      "source_directives": [
+        {"path": "src/auth/login.py", "start": 42, "end": 67},
+        {"path": "src/auth/oauth.py", "start": 18, "end": 30}
+      ],
       "related_concepts": ["error-handling", "data-model"],
       "tokens_est": 1180,
       "stale": false,
@@ -65,6 +87,25 @@ The MANIFEST is the index. Treat it as the **only thing always in context**. Eve
   ]
 }
 ```
+
+## v1 → v2 changes
+
+| Where | New field | Default for migrated v1 | Purpose |
+|---|---|---|---|
+| Top-level | `host_tool` | `"claude"` | Records which tool initialized the KB |
+| Top-level | `adapters_emitted_at` | `null` | Set by `emit-adapters`; powers STRUCT-07 |
+| Top-level | `canonical_skill_sha256` | `null` | Stamp for drift detection |
+| `config` | `signature_extraction` | `{python: ast, javascript: regex, ...}` | Per-language extractor selection |
+| `config` | `audit_directives` | `false` | Opt-in logging of `<<source:>>` resolutions |
+| `stats` | `signature_defer_count` | `0` | Number of files where LLM deferred to source |
+| `stats` | `signature_defer_rate` | `0.0` | Powers PERF-04 |
+| `sources[i]` | `sig_sha256` | `null` (populated lazily) | Body-only-edit skip |
+| `sources[i]` | `signature_source` | `null` | `"ast" \| "regex" \| null` |
+| `sources[i]` | `signature_file` | `null` | Path to the skeleton (relative to `.repokb/`) |
+| `sources[i]` | `language` | inferred from `type` | For dispatch into `signature_extraction` |
+| `concepts[i]` | `source_directives` | `[]` (populated on next refresh) | MANIFEST mirror for lint |
+
+Migrate via `python repokb/scripts/compile.py migrate --root .`. The migration is in-place, lossless, and does not re-summarize.
 
 ## Field-by-field rules
 

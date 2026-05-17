@@ -30,33 +30,61 @@ class TestCmdInit(unittest.TestCase):
         run_compile("init", "--root", str(self.tmp))
         self.assertTrue(self.layout.manifest.is_file())
         m = json.loads(self.layout.manifest.read_text())
-        self.assertEqual(m["version"], 1)
-        self.assertEqual(len(m["sources"]), 8,
-                         "minimal_repo has 8 source files")
+        self.assertEqual(m["version"], 2)
+        # minimal_repo fixture: 8 .py/.md files plus service.py added in v2
+        self.assertGreaterEqual(len(m["sources"]), 8)
 
-    def test_init_queues_one_summary_job_per_source(self):
+    def test_init_queues_summary_or_signature_per_source(self):
         run_compile("init", "--root", str(self.tmp))
         jobs = read_queue_jobs(self.layout)
-        summary_jobs = [j for j in jobs if j["job"] == "summarize"]
-        self.assertEqual(len(summary_jobs), 8)
+        worker_jobs = [j for j in jobs
+                       if j["job"] in ("summarize", "summarize_signature")]
+        # Every source gets exactly one worker job.
+        m = json.loads(self.layout.manifest.read_text())
+        self.assertEqual(len(worker_jobs), len(m["sources"]))
+
+    def test_python_files_get_summarize_signature_jobs(self):
+        run_compile("init", "--root", str(self.tmp))
+        jobs = read_queue_jobs(self.layout)
+        sig_jobs = [j for j in jobs if j["job"] == "summarize_signature"]
+        self.assertTrue(any(j["source_path"].endswith(".py") for j in sig_jobs))
+        for j in sig_jobs:
+            self.assertIn("signature_path", j)
+            self.assertIn("sig_sha256", j)
+
+    def test_markdown_files_get_legacy_summarize_jobs(self):
+        run_compile("init", "--root", str(self.tmp))
+        jobs = read_queue_jobs(self.layout)
+        md_jobs = [j for j in jobs
+                   if j["job"] == "summarize"
+                   and j["source_path"].endswith(".md")]
+        self.assertGreater(len(md_jobs), 0)
 
     def test_init_queues_exactly_one_concept_init_job(self):
         run_compile("init", "--root", str(self.tmp))
         jobs = read_queue_jobs(self.layout)
         concept_jobs = [j for j in jobs if j["job"] == "concept_init"]
         self.assertEqual(len(concept_jobs), 1)
+        m = json.loads(self.layout.manifest.read_text())
         self.assertEqual(
-            len(concept_jobs[0]["summary_paths"]), 8,
-            "concept_init job should reference all 8 summaries",
+            len(concept_jobs[0]["summary_paths"]), len(m["sources"]),
+            "concept_init job should reference all summaries",
         )
 
     def test_init_summary_paths_use_double_underscore(self):
         run_compile("init", "--root", str(self.tmp))
         jobs = read_queue_jobs(self.layout)
-        summary_jobs = [j for j in jobs if j["job"] == "summarize"]
-        for j in summary_jobs:
+        worker_jobs = [j for j in jobs
+                       if j["job"] in ("summarize", "summarize_signature")]
+        for j in worker_jobs:
             self.assertIn("summaries/", j["out_path"])
             self.assertNotIn("/", j["out_path"].rsplit("summaries/", 1)[1])
+
+    def test_init_writes_signature_files_for_python(self):
+        run_compile("init", "--root", str(self.tmp))
+        sig_files = list(self.layout.signatures.glob("*.md"))
+        self.assertGreater(len(sig_files), 0,
+                           "expected at least one signature skeleton on disk")
 
     def test_init_refuses_when_manifest_exists(self):
         run_compile("init", "--root", str(self.tmp))

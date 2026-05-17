@@ -1,0 +1,46 @@
+# RepoKB adapter convention registry.
+#
+# Tracks which version of each tool's instruction-file convention we
+# target. When an upstream tool (Cursor, Copilot, Codex) changes its
+# spec:
+#   1. Update the corresponding adapter file (repokb/adapters/<tool>.py)
+#   2. Bump current_version below + the adapter's convention_version
+#   3. Regenerate goldens:
+#      REPOKB_UPDATE_GOLDENS=1 python -m unittest evals/test_emit_adapters.py
+#
+# `compile.py adapter-check` validates that each adapter's stamped
+# convention_version matches what's here.
+
+claude:
+  current_version: "2025-09"
+  output_path: "CLAUDE.md"
+  frontmatter: yaml
+  merge_mode: sentinel
+  reference: "https://docs.anthropic.com/claude/docs/skills"
+  note: |
+    The canonical skill spec lives at <install>/repokb/SKILL.md and is what
+    Claude's skill loader picks up. emit-adapters writes a project-level
+    CLAUDE.md to the target repo so teammates working on the indexed project
+    get the protocol even without installing the skill globally.
+
+codex:
+  current_version: "2025-10"
+  output_path: "AGENTS.md"
+  frontmatter: none
+  merge_mode: sentinel
+  reference: "https://platform.openai.com/docs/codex-cli/configuration"
+
+copilot:
+  current_version: "2025-11"
+  output_path: ".github/copilot-instructions.md"
+  frontmatter: none
+  merge_mode: sentinel
+  reference: "https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot"
+  token_budget: 3000
+
+cursor:
+  current_version: "2025-12"
+  output_path: ".cursor/rules/repokb.mdc"
+  frontmatter: mdc
+  merge_mode: replace
+  reference: "https://docs.cursor.com/context/rules"
