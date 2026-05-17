@@ -316,14 +316,19 @@ def cmd_update(args: argparse.Namespace) -> int:
           f"-{len(delta.removed)} renamed={len(delta.renamed)} "
           f"unchanged={len(delta.unchanged)}", file=sys.stderr)
 
-    # Apply renames first (no re-summarization)
+    # Apply renames first (no re-summarization).
+    # Snapshot old_path/new_path before mutating: diff_sources returns the same
+    # dict objects that live in manifest["sources"], so updating s["path"]
+    # below would also mutate old["path"] and break the concept-update loop.
     for old, new in delta.renamed:
+        old_path = old["path"]
+        new_path = new["path"]
         for s in manifest["sources"]:
-            if s["path"] == old["path"]:
-                s["path"] = new["path"]
+            if s["path"] == old_path:
+                s["path"] = new_path
                 s["mtime"] = new["mtime"]
                 old_summary = layout.kb / s["summary"]
-                new_summary_rel = f"summaries/{summary_filename(new['path'])}"
+                new_summary_rel = f"summaries/{summary_filename(new_path)}"
                 new_summary = layout.kb / new_summary_rel
                 if old_summary.exists():
                     old_summary.rename(new_summary)
@@ -331,11 +336,11 @@ def cmd_update(args: argparse.Namespace) -> int:
                 break
         for c in manifest["concepts"]:
             c["touches_sources"] = [
-                new["path"] if p == old["path"] else p
+                new_path if p == old_path else p
                 for p in c["touches_sources"]
             ]
         manifest["renames_log"].append(
-            {"from": old["path"], "to": new["path"], "at": now_iso()}
+            {"from": old_path, "to": new_path, "at": now_iso()}
         )
 
     # Apply deletions

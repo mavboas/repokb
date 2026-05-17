@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "root": "/tmp/test",
+  "created_at": "2026-01-01T00:00:00+00:00",
+  "updated_at": "2026-01-01T00:00:00+00:00",
+  "model_used": "test",
+  "config": {
+    "include_globs": ["**/*"],
+    "exclude_globs": [".git/**", ".repokb/**"],
+    "ingest_binary_docs": true,
+    "max_concept_tokens": 1500,
+    "max_summary_tokens": 400,
+    "max_concepts": 80,
+    "marginal_sources": []
+  },
+  "stats": {"sources": 1, "summaries": 1, "concepts": 1, "stale_concepts": 0, "total_size_bytes": 100},
+  "sources": [
+    {"path": "lonely.py", "sha256": "h1", "bytes": 100, "mtime": "2026-01-01T00:00:00+00:00", "type": "py", "summary": "summaries/lonely.py.md", "tags": []}
+  ],
+  "concepts": [
+    {"id": "thin", "file": "concepts/thin.md", "topics": ["t1"], "touches_sources": ["lonely.py"], "related_concepts": [], "tokens_est": 500, "stale": false, "last_synthesized": "2026-01-01T00:00:00+00:00", "gaps": []}
+  ],
+  "renames_log": []
+}

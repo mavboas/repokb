@@ -1,0 +1,847 @@
+{
+    "version":  1,
+    "root":  "/tmp/test",
+    "created_at":  "2026-01-01T00:00:00+00:00",
+    "updated_at":  "2026-01-01T00:00:00+00:00",
+    "model_used":  "test",
+    "config":  {
+                   "max_concept_tokens":  1500,
+                   "max_summary_tokens":  400,
+                   "ingest_binary_docs":  true,
+                   "exclude_globs":  [
+                                         ".git/**",
+                                         ".repokb/**"
+                                     ],
+                   "max_concepts":  80,
+                   "include_globs":  [
+                                         "**/*"
+                                     ],
+                   "marginal_sources":  [
+
+                                        ]
+               },
+    "stats":  {
+                  "sources":  60,
+                  "summaries":  60,
+                  "stale_concepts":  0,
+                  "concepts":  5,
+                  "total_size_bytes":  60000
+              },
+    "sources":  [
+                    {
+                        "sha256":  "hash1",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_1/file_1.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_1__file_1.py.md"
+                    },
+                    {
+                        "sha256":  "hash2",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_2/file_2.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_2__file_2.py.md"
+                    },
+                    {
+                        "sha256":  "hash3",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_3/file_3.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_3__file_3.py.md"
+                    },
+                    {
+                        "sha256":  "hash4",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_4/file_4.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_4__file_4.py.md"
+                    },
+                    {
+                        "sha256":  "hash5",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_5/file_5.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_5__file_5.py.md"
+                    },
+                    {
+                        "sha256":  "hash6",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_6/file_6.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_6__file_6.py.md"
+                    },
+                    {
+                        "sha256":  "hash7",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_7/file_7.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_7__file_7.py.md"
+                    },
+                    {
+                        "sha256":  "hash8",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_8/file_8.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_8__file_8.py.md"
+                    },
+                    {
+                        "sha256":  "hash9",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_9/file_9.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_9__file_9.py.md"
+                    },
+                    {
+                        "sha256":  "hash10",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_10/file_10.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_10__file_10.py.md"
+                    },
+                    {
+                        "sha256":  "hash11",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_11/file_11.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_11__file_11.py.md"
+                    },
+                    {
+                        "sha256":  "hash12",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_12/file_12.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_12__file_12.py.md"
+                    },
+                    {
+                        "sha256":  "hash13",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_13/file_13.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_13__file_13.py.md"
+                    },
+                    {
+                        "sha256":  "hash14",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_14/file_14.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_14__file_14.py.md"
+                    },
+                    {
+                        "sha256":  "hash15",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_15/file_15.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_15__file_15.py.md"
+                    },
+                    {
+                        "sha256":  "hash16",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_16/file_16.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_16__file_16.py.md"
+                    },
+                    {
+                        "sha256":  "hash17",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_17/file_17.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_17__file_17.py.md"
+                    },
+                    {
+                        "sha256":  "hash18",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_18/file_18.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_18__file_18.py.md"
+                    },
+                    {
+                        "sha256":  "hash19",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_19/file_19.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_19__file_19.py.md"
+                    },
+                    {
+                        "sha256":  "hash20",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_20/file_20.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_20__file_20.py.md"
+                    },
+                    {
+                        "sha256":  "hash21",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_21/file_21.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_21__file_21.py.md"
+                    },
+                    {
+                        "sha256":  "hash22",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_22/file_22.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_22__file_22.py.md"
+                    },
+                    {
+                        "sha256":  "hash23",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_23/file_23.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_23__file_23.py.md"
+                    },
+                    {
+                        "sha256":  "hash24",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_24/file_24.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_24__file_24.py.md"
+                    },
+                    {
+                        "sha256":  "hash25",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_25/file_25.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_25__file_25.py.md"
+                    },
+                    {
+                        "sha256":  "hash26",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_26/file_26.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_26__file_26.py.md"
+                    },
+                    {
+                        "sha256":  "hash27",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_27/file_27.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_27__file_27.py.md"
+                    },
+                    {
+                        "sha256":  "hash28",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_28/file_28.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_28__file_28.py.md"
+                    },
+                    {
+                        "sha256":  "hash29",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_29/file_29.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_29__file_29.py.md"
+                    },
+                    {
+                        "sha256":  "hash30",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_30/file_30.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_30__file_30.py.md"
+                    },
+                    {
+                        "sha256":  "hash31",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_31/file_31.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_31__file_31.py.md"
+                    },
+                    {
+                        "sha256":  "hash32",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_32/file_32.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_32__file_32.py.md"
+                    },
+                    {
+                        "sha256":  "hash33",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_33/file_33.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_33__file_33.py.md"
+                    },
+                    {
+                        "sha256":  "hash34",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_34/file_34.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_34__file_34.py.md"
+                    },
+                    {
+                        "sha256":  "hash35",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_35/file_35.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_35__file_35.py.md"
+                    },
+                    {
+                        "sha256":  "hash36",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_36/file_36.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_36__file_36.py.md"
+                    },
+                    {
+                        "sha256":  "hash37",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_37/file_37.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_37__file_37.py.md"
+                    },
+                    {
+                        "sha256":  "hash38",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_38/file_38.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_38__file_38.py.md"
+                    },
+                    {
+                        "sha256":  "hash39",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_39/file_39.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_39__file_39.py.md"
+                    },
+                    {
+                        "sha256":  "hash40",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_40/file_40.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_40__file_40.py.md"
+                    },
+                    {
+                        "sha256":  "hash41",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_41/file_41.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_41__file_41.py.md"
+                    },
+                    {
+                        "sha256":  "hash42",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_42/file_42.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_42__file_42.py.md"
+                    },
+                    {
+                        "sha256":  "hash43",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_43/file_43.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_43__file_43.py.md"
+                    },
+                    {
+                        "sha256":  "hash44",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_44/file_44.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_44__file_44.py.md"
+                    },
+                    {
+                        "sha256":  "hash45",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_45/file_45.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_45__file_45.py.md"
+                    },
+                    {
+                        "sha256":  "hash46",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_46/file_46.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_46__file_46.py.md"
+                    },
+                    {
+                        "sha256":  "hash47",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_47/file_47.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_47__file_47.py.md"
+                    },
+                    {
+                        "sha256":  "hash48",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_48/file_48.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_48__file_48.py.md"
+                    },
+                    {
+                        "sha256":  "hash49",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_49/file_49.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_49__file_49.py.md"
+                    },
+                    {
+                        "sha256":  "hash50",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_50/file_50.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_50__file_50.py.md"
+                    },
+                    {
+                        "sha256":  "hash51",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_51/file_51.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_51__file_51.py.md"
+                    },
+                    {
+                        "sha256":  "hash52",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_52/file_52.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_52__file_52.py.md"
+                    },
+                    {
+                        "sha256":  "hash53",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_53/file_53.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_53__file_53.py.md"
+                    },
+                    {
+                        "sha256":  "hash54",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_54/file_54.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_54__file_54.py.md"
+                    },
+                    {
+                        "sha256":  "hash55",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_55/file_55.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_55__file_55.py.md"
+                    },
+                    {
+                        "sha256":  "hash56",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_56/file_56.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_56__file_56.py.md"
+                    },
+                    {
+                        "sha256":  "hash57",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_57/file_57.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_57__file_57.py.md"
+                    },
+                    {
+                        "sha256":  "hash58",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_58/file_58.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_58__file_58.py.md"
+                    },
+                    {
+                        "sha256":  "hash59",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_59/file_59.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_59__file_59.py.md"
+                    },
+                    {
+                        "sha256":  "hash60",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  1000,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "src/module_60/file_60.py",
+                        "type":  "py",
+                        "summary":  "summaries/src__module_60__file_60.py.md"
+                    }
+                ],
+    "concepts":  [
+                     {
+                         "id":  "group_0",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t0"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  500,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "src/module_1/file_1.py",
+                                                 "src/module_2/file_2.py",
+                                                 "src/module_3/file_3.py",
+                                                 "src/module_4/file_4.py",
+                                                 "src/module_5/file_5.py",
+                                                 "src/module_6/file_6.py",
+                                                 "src/module_7/file_7.py",
+                                                 "src/module_8/file_8.py",
+                                                 "src/module_9/file_9.py",
+                                                 "src/module_10/file_10.py",
+                                                 "src/module_11/file_11.py",
+                                                 "src/module_12/file_12.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/group_0.md"
+                     },
+                     {
+                         "id":  "group_1",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t1"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  500,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "src/module_13/file_13.py",
+                                                 "src/module_14/file_14.py",
+                                                 "src/module_15/file_15.py",
+                                                 "src/module_16/file_16.py",
+                                                 "src/module_17/file_17.py",
+                                                 "src/module_18/file_18.py",
+                                                 "src/module_19/file_19.py",
+                                                 "src/module_20/file_20.py",
+                                                 "src/module_21/file_21.py",
+                                                 "src/module_22/file_22.py",
+                                                 "src/module_23/file_23.py",
+                                                 "src/module_24/file_24.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/group_1.md"
+                     },
+                     {
+                         "id":  "group_2",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t2"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  500,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "src/module_25/file_25.py",
+                                                 "src/module_26/file_26.py",
+                                                 "src/module_27/file_27.py",
+                                                 "src/module_28/file_28.py",
+                                                 "src/module_29/file_29.py",
+                                                 "src/module_30/file_30.py",
+                                                 "src/module_31/file_31.py",
+                                                 "src/module_32/file_32.py",
+                                                 "src/module_33/file_33.py",
+                                                 "src/module_34/file_34.py",
+                                                 "src/module_35/file_35.py",
+                                                 "src/module_36/file_36.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/group_2.md"
+                     },
+                     {
+                         "id":  "group_3",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t3"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  500,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "src/module_37/file_37.py",
+                                                 "src/module_38/file_38.py",
+                                                 "src/module_39/file_39.py",
+                                                 "src/module_40/file_40.py",
+                                                 "src/module_41/file_41.py",
+                                                 "src/module_42/file_42.py",
+                                                 "src/module_43/file_43.py",
+                                                 "src/module_44/file_44.py",
+                                                 "src/module_45/file_45.py",
+                                                 "src/module_46/file_46.py",
+                                                 "src/module_47/file_47.py",
+                                                 "src/module_48/file_48.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/group_3.md"
+                     },
+                     {
+                         "id":  "group_4",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t4"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  500,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "src/module_49/file_49.py",
+                                                 "src/module_50/file_50.py",
+                                                 "src/module_51/file_51.py",
+                                                 "src/module_52/file_52.py",
+                                                 "src/module_53/file_53.py",
+                                                 "src/module_54/file_54.py",
+                                                 "src/module_55/file_55.py",
+                                                 "src/module_56/file_56.py",
+                                                 "src/module_57/file_57.py",
+                                                 "src/module_58/file_58.py",
+                                                 "src/module_59/file_59.py",
+                                                 "src/module_60/file_60.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/group_4.md"
+                     }
+                 ],
+    "renames_log":  [
+
+                    ]
+}

@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"D:\\\\projetos\\\\repokb\\\\.claude\\\\commands\")",
+      "Bash(mkdir -p \"D:\\\\projetos\\\\repokb\\\\scripts\")",
+      "PowerShell(python 'D:\\\\projetos\\\\repokb\\\\scripts\\\\compile.py' --help)",
+      "PowerShell(Get-Command *)",
+      "PowerShell($src = Get-FileHash 'D:\\\\projetos\\\\repokb\\\\specs\\\\compile.py' -Algorithm SHA256; $dst = Get-FileHash 'D:\\\\projetos\\\\repokb\\\\scripts\\\\compile.py' -Algorithm SHA256; if \\($src.Hash -eq $dst.Hash\\) { Write-Output \"compile.py: hash match\" } else { Write-Output \"compile.py: HASH MISMATCH\" }; Get-ChildItem -Recurse 'D:\\\\projetos\\\\repokb\\\\.claude\\\\skills\\\\repokb' | ForEach-Object { Write-Output $_.FullName.Replace\\('D:\\\\projetos\\\\repokb\\\\',''\\) })",
+      "PowerShell(Get-FileHash *)",
+      "PowerShell(Get-ChildItem 'D:\\\\projetos\\\\repokb\\\\evals' -Recurse -File | ForEach-Object { $_.FullName.Replace\\('D:\\\\projetos\\\\repokb\\\\',''\\) })",
+      "PowerShell(winget install *)"
+    ]
+  }
+}

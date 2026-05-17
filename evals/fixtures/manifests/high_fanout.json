@@ -1,0 +1,355 @@
+{
+    "version":  1,
+    "root":  "/tmp/test",
+    "created_at":  "2026-01-01T00:00:00+00:00",
+    "updated_at":  "2026-01-01T00:00:00+00:00",
+    "model_used":  "test",
+    "config":  {
+                   "max_concept_tokens":  1500,
+                   "max_summary_tokens":  400,
+                   "ingest_binary_docs":  true,
+                   "exclude_globs":  [
+                                         ".git/**",
+                                         ".repokb/**"
+                                     ],
+                   "max_concepts":  80,
+                   "include_globs":  [
+                                         "**/*"
+                                     ],
+                   "marginal_sources":  [
+
+                                        ]
+               },
+    "stats":  {
+                  "sources":  25,
+                  "summaries":  25,
+                  "stale_concepts":  0,
+                  "concepts":  1,
+                  "total_size_bytes":  2500
+              },
+    "sources":  [
+                    {
+                        "sha256":  "h1",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f1.py",
+                        "type":  "py",
+                        "summary":  "summaries/f1.py.md"
+                    },
+                    {
+                        "sha256":  "h2",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f2.py",
+                        "type":  "py",
+                        "summary":  "summaries/f2.py.md"
+                    },
+                    {
+                        "sha256":  "h3",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f3.py",
+                        "type":  "py",
+                        "summary":  "summaries/f3.py.md"
+                    },
+                    {
+                        "sha256":  "h4",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f4.py",
+                        "type":  "py",
+                        "summary":  "summaries/f4.py.md"
+                    },
+                    {
+                        "sha256":  "h5",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f5.py",
+                        "type":  "py",
+                        "summary":  "summaries/f5.py.md"
+                    },
+                    {
+                        "sha256":  "h6",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f6.py",
+                        "type":  "py",
+                        "summary":  "summaries/f6.py.md"
+                    },
+                    {
+                        "sha256":  "h7",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f7.py",
+                        "type":  "py",
+                        "summary":  "summaries/f7.py.md"
+                    },
+                    {
+                        "sha256":  "h8",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f8.py",
+                        "type":  "py",
+                        "summary":  "summaries/f8.py.md"
+                    },
+                    {
+                        "sha256":  "h9",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f9.py",
+                        "type":  "py",
+                        "summary":  "summaries/f9.py.md"
+                    },
+                    {
+                        "sha256":  "h10",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f10.py",
+                        "type":  "py",
+                        "summary":  "summaries/f10.py.md"
+                    },
+                    {
+                        "sha256":  "h11",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f11.py",
+                        "type":  "py",
+                        "summary":  "summaries/f11.py.md"
+                    },
+                    {
+                        "sha256":  "h12",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f12.py",
+                        "type":  "py",
+                        "summary":  "summaries/f12.py.md"
+                    },
+                    {
+                        "sha256":  "h13",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f13.py",
+                        "type":  "py",
+                        "summary":  "summaries/f13.py.md"
+                    },
+                    {
+                        "sha256":  "h14",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f14.py",
+                        "type":  "py",
+                        "summary":  "summaries/f14.py.md"
+                    },
+                    {
+                        "sha256":  "h15",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f15.py",
+                        "type":  "py",
+                        "summary":  "summaries/f15.py.md"
+                    },
+                    {
+                        "sha256":  "h16",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f16.py",
+                        "type":  "py",
+                        "summary":  "summaries/f16.py.md"
+                    },
+                    {
+                        "sha256":  "h17",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f17.py",
+                        "type":  "py",
+                        "summary":  "summaries/f17.py.md"
+                    },
+                    {
+                        "sha256":  "h18",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f18.py",
+                        "type":  "py",
+                        "summary":  "summaries/f18.py.md"
+                    },
+                    {
+                        "sha256":  "h19",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f19.py",
+                        "type":  "py",
+                        "summary":  "summaries/f19.py.md"
+                    },
+                    {
+                        "sha256":  "h20",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f20.py",
+                        "type":  "py",
+                        "summary":  "summaries/f20.py.md"
+                    },
+                    {
+                        "sha256":  "h21",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f21.py",
+                        "type":  "py",
+                        "summary":  "summaries/f21.py.md"
+                    },
+                    {
+                        "sha256":  "h22",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f22.py",
+                        "type":  "py",
+                        "summary":  "summaries/f22.py.md"
+                    },
+                    {
+                        "sha256":  "h23",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f23.py",
+                        "type":  "py",
+                        "summary":  "summaries/f23.py.md"
+                    },
+                    {
+                        "sha256":  "h24",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f24.py",
+                        "type":  "py",
+                        "summary":  "summaries/f24.py.md"
+                    },
+                    {
+                        "sha256":  "h25",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "f25.py",
+                        "type":  "py",
+                        "summary":  "summaries/f25.py.md"
+                    }
+                ],
+    "concepts":  [
+                     {
+                         "id":  "fanout",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t1"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  1000,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "f1.py",
+                                                 "f2.py",
+                                                 "f3.py",
+                                                 "f4.py",
+                                                 "f5.py",
+                                                 "f6.py",
+                                                 "f7.py",
+                                                 "f8.py",
+                                                 "f9.py",
+                                                 "f10.py",
+                                                 "f11.py",
+                                                 "f12.py",
+                                                 "f13.py",
+                                                 "f14.py",
+                                                 "f15.py",
+                                                 "f16.py",
+                                                 "f17.py",
+                                                 "f18.py",
+                                                 "f19.py",
+                                                 "f20.py",
+                                                 "f21.py",
+                                                 "f22.py",
+                                                 "f23.py",
+                                                 "f24.py",
+                                                 "f25.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/fanout.md"
+                     }
+                 ],
+    "renames_log":  [
+
+                    ]
+}

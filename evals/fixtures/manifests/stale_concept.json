@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "root": "/tmp/test",
+  "created_at": "2026-01-01T00:00:00+00:00",
+  "updated_at": "2026-01-01T00:00:00+00:00",
+  "model_used": "test",
+  "config": {
+    "include_globs": ["**/*"],
+    "exclude_globs": [".git/**", ".repokb/**"],
+    "ingest_binary_docs": true,
+    "max_concept_tokens": 1500,
+    "max_summary_tokens": 400,
+    "max_concepts": 80,
+    "marginal_sources": []
+  },
+  "stats": {"sources": 2, "summaries": 2, "concepts": 1, "stale_concepts": 1, "total_size_bytes": 200},
+  "sources": [
+    {"path": "a.py", "sha256": "h1", "bytes": 100, "mtime": "2026-01-01T00:00:00+00:00", "type": "py", "summary": "summaries/a.py.md", "tags": []},
+    {"path": "b.py", "sha256": "h2", "bytes": 100, "mtime": "2026-01-01T00:00:00+00:00", "type": "py", "summary": "summaries/b.py.md", "tags": []}
+  ],
+  "concepts": [
+    {"id": "c1", "file": "concepts/c1.md", "topics": ["t1"], "touches_sources": ["a.py", "b.py"], "related_concepts": [], "tokens_est": 800, "stale": true, "last_synthesized": "2026-01-01T00:00:00+00:00", "gaps": []}
+  ],
+  "renames_log": []
+}

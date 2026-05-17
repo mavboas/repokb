@@ -1,0 +1,1679 @@
+{
+    "version":  1,
+    "root":  "/tmp/test",
+    "created_at":  "2026-01-01T00:00:00+00:00",
+    "updated_at":  "2026-01-01T00:00:00+00:00",
+    "model_used":  "test",
+    "config":  {
+                   "max_concept_tokens":  1500,
+                   "max_summary_tokens":  400,
+                   "ingest_binary_docs":  true,
+                   "exclude_globs":  [
+                                         ".git/**",
+                                         ".repokb/**"
+                                     ],
+                   "max_concepts":  80,
+                   "include_globs":  [
+                                         "**/*"
+                                     ],
+                   "marginal_sources":  [
+
+                                        ]
+               },
+    "stats":  {
+                  "sources":  2,
+                  "summaries":  2,
+                  "stale_concepts":  0,
+                  "concepts":  81,
+                  "total_size_bytes":  200
+              },
+    "sources":  [
+                    {
+                        "sha256":  "h1",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "a.py",
+                        "type":  "py",
+                        "summary":  "summaries/a.py.md"
+                    },
+                    {
+                        "sha256":  "h2",
+                        "tags":  [
+
+                                 ],
+                        "bytes":  100,
+                        "mtime":  "2026-01-01T00:00:00+00:00",
+                        "path":  "b.py",
+                        "type":  "py",
+                        "summary":  "summaries/b.py.md"
+                    }
+                ],
+    "concepts":  [
+                     {
+                         "id":  "c1",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t1"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c1.md"
+                     },
+                     {
+                         "id":  "c2",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t2"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c2.md"
+                     },
+                     {
+                         "id":  "c3",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t3"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c3.md"
+                     },
+                     {
+                         "id":  "c4",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t4"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c4.md"
+                     },
+                     {
+                         "id":  "c5",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t5"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c5.md"
+                     },
+                     {
+                         "id":  "c6",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t6"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c6.md"
+                     },
+                     {
+                         "id":  "c7",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t7"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c7.md"
+                     },
+                     {
+                         "id":  "c8",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t8"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c8.md"
+                     },
+                     {
+                         "id":  "c9",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t9"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c9.md"
+                     },
+                     {
+                         "id":  "c10",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t10"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c10.md"
+                     },
+                     {
+                         "id":  "c11",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t11"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c11.md"
+                     },
+                     {
+                         "id":  "c12",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t12"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c12.md"
+                     },
+                     {
+                         "id":  "c13",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t13"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c13.md"
+                     },
+                     {
+                         "id":  "c14",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t14"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c14.md"
+                     },
+                     {
+                         "id":  "c15",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t15"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c15.md"
+                     },
+                     {
+                         "id":  "c16",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t16"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c16.md"
+                     },
+                     {
+                         "id":  "c17",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t17"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c17.md"
+                     },
+                     {
+                         "id":  "c18",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t18"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c18.md"
+                     },
+                     {
+                         "id":  "c19",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t19"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c19.md"
+                     },
+                     {
+                         "id":  "c20",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t20"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c20.md"
+                     },
+                     {
+                         "id":  "c21",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t21"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c21.md"
+                     },
+                     {
+                         "id":  "c22",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t22"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c22.md"
+                     },
+                     {
+                         "id":  "c23",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t23"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c23.md"
+                     },
+                     {
+                         "id":  "c24",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t24"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c24.md"
+                     },
+                     {
+                         "id":  "c25",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t25"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c25.md"
+                     },
+                     {
+                         "id":  "c26",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t26"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c26.md"
+                     },
+                     {
+                         "id":  "c27",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t27"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c27.md"
+                     },
+                     {
+                         "id":  "c28",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t28"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c28.md"
+                     },
+                     {
+                         "id":  "c29",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t29"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c29.md"
+                     },
+                     {
+                         "id":  "c30",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t30"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c30.md"
+                     },
+                     {
+                         "id":  "c31",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t31"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c31.md"
+                     },
+                     {
+                         "id":  "c32",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t32"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c32.md"
+                     },
+                     {
+                         "id":  "c33",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t33"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c33.md"
+                     },
+                     {
+                         "id":  "c34",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t34"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c34.md"
+                     },
+                     {
+                         "id":  "c35",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t35"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c35.md"
+                     },
+                     {
+                         "id":  "c36",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t36"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c36.md"
+                     },
+                     {
+                         "id":  "c37",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t37"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c37.md"
+                     },
+                     {
+                         "id":  "c38",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t38"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c38.md"
+                     },
+                     {
+                         "id":  "c39",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t39"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c39.md"
+                     },
+                     {
+                         "id":  "c40",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t40"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c40.md"
+                     },
+                     {
+                         "id":  "c41",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t41"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c41.md"
+                     },
+                     {
+                         "id":  "c42",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t42"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c42.md"
+                     },
+                     {
+                         "id":  "c43",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t43"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c43.md"
+                     },
+                     {
+                         "id":  "c44",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t44"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c44.md"
+                     },
+                     {
+                         "id":  "c45",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t45"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c45.md"
+                     },
+                     {
+                         "id":  "c46",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t46"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c46.md"
+                     },
+                     {
+                         "id":  "c47",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t47"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c47.md"
+                     },
+                     {
+                         "id":  "c48",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t48"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c48.md"
+                     },
+                     {
+                         "id":  "c49",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t49"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c49.md"
+                     },
+                     {
+                         "id":  "c50",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t50"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c50.md"
+                     },
+                     {
+                         "id":  "c51",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t51"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c51.md"
+                     },
+                     {
+                         "id":  "c52",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t52"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c52.md"
+                     },
+                     {
+                         "id":  "c53",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t53"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c53.md"
+                     },
+                     {
+                         "id":  "c54",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t54"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c54.md"
+                     },
+                     {
+                         "id":  "c55",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t55"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c55.md"
+                     },
+                     {
+                         "id":  "c56",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t56"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c56.md"
+                     },
+                     {
+                         "id":  "c57",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t57"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c57.md"
+                     },
+                     {
+                         "id":  "c58",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t58"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c58.md"
+                     },
+                     {
+                         "id":  "c59",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t59"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c59.md"
+                     },
+                     {
+                         "id":  "c60",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t60"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c60.md"
+                     },
+                     {
+                         "id":  "c61",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t61"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c61.md"
+                     },
+                     {
+                         "id":  "c62",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t62"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c62.md"
+                     },
+                     {
+                         "id":  "c63",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t63"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c63.md"
+                     },
+                     {
+                         "id":  "c64",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t64"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c64.md"
+                     },
+                     {
+                         "id":  "c65",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t65"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c65.md"
+                     },
+                     {
+                         "id":  "c66",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t66"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c66.md"
+                     },
+                     {
+                         "id":  "c67",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t67"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c67.md"
+                     },
+                     {
+                         "id":  "c68",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t68"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c68.md"
+                     },
+                     {
+                         "id":  "c69",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t69"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c69.md"
+                     },
+                     {
+                         "id":  "c70",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t70"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c70.md"
+                     },
+                     {
+                         "id":  "c71",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t71"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c71.md"
+                     },
+                     {
+                         "id":  "c72",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t72"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c72.md"
+                     },
+                     {
+                         "id":  "c73",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t73"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c73.md"
+                     },
+                     {
+                         "id":  "c74",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t74"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c74.md"
+                     },
+                     {
+                         "id":  "c75",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t75"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c75.md"
+                     },
+                     {
+                         "id":  "c76",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t76"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c76.md"
+                     },
+                     {
+                         "id":  "c77",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t77"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c77.md"
+                     },
+                     {
+                         "id":  "c78",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t78"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c78.md"
+                     },
+                     {
+                         "id":  "c79",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t79"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c79.md"
+                     },
+                     {
+                         "id":  "c80",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t80"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c80.md"
+                     },
+                     {
+                         "id":  "c81",
+                         "gaps":  [
+
+                                  ],
+                         "topics":  [
+                                        "t81"
+                                    ],
+                         "related_concepts":  [
+
+                                              ],
+                         "tokens_est":  100,
+                         "last_synthesized":  "2026-01-01T00:00:00+00:00",
+                         "touches_sources":  [
+                                                 "a.py",
+                                                 "b.py"
+                                             ],
+                         "stale":  false,
+                         "file":  "concepts/c81.md"
+                     }
+                 ],
+    "renames_log":  [
+
+                    ]
+}
