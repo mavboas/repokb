@@ -32,7 +32,7 @@ A concept page contains `<!-- contradiction: ... -->` markers. Surface them so t
 A source in `docs/` hasn't been modified in N days (default 180) but adjacent code sources have. Suggests docs are drifting. **Soft warning** — user decides.
 
 ### STRUCT-07: Adapter drift
-An emitted per-tool instruction file (`CLAUDE.md`, `AGENTS.md`, `.github/copilot-instructions.md`, `.cursor/rules/repokb.mdc`) is out of sync with what the canonical `repokb/SKILL.md` would produce now. Triggered by:
+An emitted per-tool instruction file (`CLAUDE.md`, `AGENTS.md`, `.github/copilot-instructions.md`, `.cursor/rules/repokb.mdc`) is out of sync with what the canonical `SKILL.md` (at the repo root) would produce now. Triggered by:
 - Hand-edits to the file (outside the sentinel block for sentinel-mode adapters)
 - Canonical SKILL.md changed after emit
 - Adapter's `CONVENTION_VERSION` advanced

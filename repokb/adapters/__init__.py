@@ -1,6 +1,6 @@
 """Per-tool adapter generation for RepoKB.
 
-The canonical skill spec lives at `repokb/SKILL.md`. Each adapter renders
+The canonical skill spec lives at `SKILL.md` (repo root). Each adapter renders
 that canonical text into a tool-native instruction file (Claude SKILL.md,
 Codex AGENTS.md, Copilot custom-instructions, Cursor MDC rules) so a
 single source of truth drives every supported coding assistant.

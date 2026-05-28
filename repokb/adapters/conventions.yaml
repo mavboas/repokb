@@ -18,7 +18,7 @@ claude:
   merge_mode: sentinel
   reference: "https://docs.anthropic.com/claude/docs/skills"
   note: |
-    The canonical skill spec lives at <install>/repokb/SKILL.md and is what
+    The canonical skill spec lives at <install>/SKILL.md and is what
     Claude's skill loader picks up. emit-adapters writes a project-level
     CLAUDE.md to the target repo so teammates working on the indexed project
     get the protocol even without installing the skill globally.

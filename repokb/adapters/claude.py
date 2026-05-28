@@ -1,9 +1,9 @@
 """Claude Code / claude.ai skill adapter.
 
-Output: repokb/SKILL.md (with placeholders rendered + TOOL:claude blocks kept).
-The canonical IS this file before rendering — emit-adapters writes it back to
-the same location with placeholders resolved, so a fresh `git status` shows
-a clean diff only when content actually changed.
+Output: SKILL.md at the repo root (with placeholders rendered + TOOL:claude
+blocks kept). The canonical IS this file before rendering — emit-adapters
+writes it back to the same location with placeholders resolved, so a fresh
+`git status` shows a clean diff only when content actually changed.
 
 Claude tolerates the full canonical prose (no token-trimming needed). YAML
 frontmatter is the activation contract for Claude's skill system.
@@ -31,7 +31,7 @@ class ClaudeAdapter(Adapter):
     merge_mode = "sentinel"
     critical_banner = None
 
-    # The canonical SKILL.md at repokb/SKILL.md is the actual Claude skill
+    # The canonical SKILL.md at the repo root is the actual Claude skill
     # (with TOOL: blocks intact). emit-adapters writes a PROJECT-LEVEL
     # CLAUDE.md to the target repo root for Claude Code to pick up as
     # project guidance — keeping the canonical untouched so the other

@@ -8,7 +8,7 @@ Compile your codebase into a persistent, token-efficient knowledge base that wor
 
 ## ✨ What's new in v2
 
-- **Multi-tool support.** One canonical `repokb/SKILL.md` compiles to Claude's `CLAUDE.md`, Codex's `AGENTS.md`, Copilot's `.github/copilot-instructions.md`, and Cursor's `.cursor/rules/repokb.mdc`. Run `compile.py emit-adapters --tools claude,codex,copilot,cursor` and every supported tool picks up the protocol.
+- **Multi-tool support.** One canonical `SKILL.md` (at the repo root) compiles to Claude's `CLAUDE.md`, Codex's `AGENTS.md`, Copilot's `.github/copilot-instructions.md`, and Cursor's `.cursor/rules/repokb.mdc`. Run `compile.py emit-adapters --tools claude,codex,copilot,cursor` and every supported tool picks up the protocol.
 - **No API key required.** Unlike OpenKB (which routes through a configurable LLM provider), RepoKB hands jobs to whatever LLM is hosting the current session. The Python script never makes an API call.
 - **AST-based signature skeletons.** For Python (full AST via stdlib) and JS/TS/Go/Rust (regex), the script extracts the public surface deterministically. The host LLM enriches with `Purpose` + `Notable decisions` only, reading the source ONLY when a symbol carries `<<unclear: reason>>`. Phase 1 token cost drops ~70% vs LLM-reads-whole-file.
 - **Body-only-edit skip.** When a code file's signature surface is unchanged (you tweaked an implementation, not an API), `update` skips the LLM job entirely. Routine refactors cost zero tokens.
@@ -349,7 +349,7 @@ Every query starts with the MANIFEST — your knowledge base's index:
 
 ## 📚 Documentation Structure
 
-- **[SKILL.md](./repokb/SKILL.md)** — Full skill instructions for Claude (use this for integration)
+- **[SKILL.md](./SKILL.md)** — Full skill instructions for Claude (use this for integration)
 - **[references/compilation.md](./repokb/references/compilation.md)** — Work-queue protocol + LLM integration
 - **[references/incremental.md](./repokb/references/incremental.md)** — Delta tracking + stale invalidation
 - **[references/lint_rules.md](./repokb/references/lint_rules.md)** — Health check rules
@@ -502,7 +502,7 @@ If a concept is missing, create it manually or re-run `update` to re-synthesize.
 
 RepoKB is designed as a **Claude Skill** for seamless integration:
 
-1. **Copy `repokb/SKILL.md`** to your Claude prompts folder
+1. **Copy `SKILL.md`** (at the repo root) to your Claude prompts folder
 2. **Reference the skill** in Claude Code or Chat: "Use the repokb skill to build a knowledge base for my project"
 3. **Claude handles** concept synthesis, gap detection, and query routing
 
@@ -562,7 +562,7 @@ MIT License — see [LICENSE](./LICENSE)
 
 For issues, questions, or contributions:
 - Open an [issue](https://github.com/your-org/repokb/issues)
-- Check [SKILL.md](./repokb/SKILL.md) for detailed usage
+- Check [SKILL.md](./SKILL.md) for detailed usage
 - Review [references/](./repokb/references/) for technical deep-dives
 
 ---
